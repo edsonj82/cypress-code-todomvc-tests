@@ -15,4 +15,11 @@ describe('todo actions', () => {
 
     todoPage.validateToggleState(0, false)
   })
+
+  describe('toggling todos',()=>{
+    it.only('should toggle test correctly', () => {
+        todoPage.toggleTodo(0)
+        todoPage.validateTodoCompletedState(0,true)
+    })
+})
 })

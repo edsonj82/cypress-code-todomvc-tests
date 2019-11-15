@@ -22,4 +22,12 @@ export class TodoPage {
   
       label.should(`${shouldBeToggled ? '' : 'not.'}be.checked`)
     }
+    
+    validateTodoCompletedState(todoIndex, shouldBeCompleted){
+        const label = cy.get(`.todo-list li:nth-child(${todoIndex + 1}) label`)
+        
+        label.should(`${shouldBeCompleted ? '' : 'not.'}have.css`, 'text-decoration-line','line-through')
+
+    }
+
   }
