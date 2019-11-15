@@ -17,9 +17,18 @@ describe('todo actions', () => {
   })
 
   describe('toggling todos',()=>{
-    it.only('should toggle test correctly', () => {
+    it('should toggle test correctly', () => {
         todoPage.toggleTodo(0)
+        
         todoPage.validateTodoCompletedState(0,true)
     })
+
+    it.only('should clear completed', () => {
+        todoPage.toggleTodo(0)
+
+        todoPage.clearCompleted()
+
+        todoPage.validateNumberOfTodosShown(0)
+    });
 })
 })

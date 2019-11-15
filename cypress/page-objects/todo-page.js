@@ -18,7 +18,7 @@ export class TodoPage {
     }
   
     validateToggleState(todoIndex, shouldBeToggled) {
-      const label = cy.get(`.todo-list li:nth-child(${todoIndex + 1}) label`).debug()
+      const label = cy.get(`.todo-list li:nth-child(${todoIndex + 1}) label`)
   
       label.should(`${shouldBeToggled ? '' : 'not.'}be.checked`)
     }
@@ -27,7 +27,13 @@ export class TodoPage {
         const label = cy.get(`.todo-list li:nth-child(${todoIndex + 1}) label`)
         
         label.should(`${shouldBeCompleted ? '' : 'not.'}have.css`, 'text-decoration-line','line-through')
-
     }
 
+    clearCompleted(){
+        cy.contains('Clear completed').click()
+    }
+
+    validateNumberOfTodosShown(expectedNumberOfTodos){
+        cy.get('.todo-list li').should('have.length',expectedNumberOfTodos)
+    }
   }
