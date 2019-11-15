@@ -22,9 +22,9 @@ describe('filtering',()=>{
         cy.get('.todo-list li').should('have.length',1)
     });
 
-    it('should filter "Active" todos', () => {
+    it('should filter "All" todos', () => {
         cy.contains('Active').click()
 
-        cy.get('.todo-list li').should('have.length',2)
+        cy.get('.todo-list li').should('have.length',3)
     });
 })
