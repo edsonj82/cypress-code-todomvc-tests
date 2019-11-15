@@ -1,9 +1,14 @@
 ///<reference types="cypress"/>
 
+import { TodoPage } from "../page-objects/todo-page";
+
 describe('todo actions',() =>{
+    const todoPage = new TodoPage
+
     beforeEach(()=>{
-        cy.visit('todomvc-app-for-testing.surge.sh')
-        cy.get('.new-todo').type('Clean room{enter}')
+        todoPage.navigate()//cy.visit('todomvc-app-for-testing.surge.sh')
+        
+        todoPage.addTodo('Clean room')// cy.get('.new-todo').type('Clean room{enter}')
     
     })
     it('should add a new todo to the list', () => {
