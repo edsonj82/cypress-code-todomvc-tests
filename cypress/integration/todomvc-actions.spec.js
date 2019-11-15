@@ -29,6 +29,6 @@ describe('todo actions', () => {
         todoPage.clearCompleted()
 
         todoPage.validateNumberOfTodosShown(0)
-    });
+    })
 })
 })
