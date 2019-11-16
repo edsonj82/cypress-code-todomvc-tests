@@ -36,4 +36,16 @@ export class TodoPage {
     validateNumberOfTodosShown(expectedNumberOfTodos){
         cy.get('.todo-list li').should('have.length',expectedNumberOfTodos)
     }
+
+    showOnlyCompletedTodos(){
+      cy.contains('Completed').click()
+    }
+
+    showOnlyActiveTodos(){
+      cy.contains('Active').click()
+    }
+    
+    showAllTodos(){
+      cy.contains('All').click()
+    }
   }
